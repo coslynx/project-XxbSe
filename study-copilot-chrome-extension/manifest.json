@@ -1,0 +1,32 @@
+{
+  "name": "Study Copilot Chrome Extension",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "A Chrome extension to enhance study productivity and focus.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "src/components/ChatPopup.js",
+    "default_icon": {
+      "16": "assets/images/copilot-icon.png",
+      "48": "assets/images/copilot-icon.png",
+      "128": "assets/images/copilot-icon.png"
+    }
+  },
+  "background": {
+    "service_worker": "src/components/TabMonitor.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "src/components/PomodoroTimer.js"
+      ]
+    }
+  ]
+}
