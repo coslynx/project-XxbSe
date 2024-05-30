@@ -1,0 +1,9 @@
+import React from 'react';
+
+const CopilotIcon = () => {
+  return (
+    <img src={process.env.PUBLIC_URL + '/assets/images/copilot-icon.png'} alt="Copilot Icon" />
+  );
+}
+
+export default CopilotIcon;
